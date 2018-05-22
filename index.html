@@ -1,117 +1,44 @@
 
-<p><?xml version="1.0" encoding="iso-8859-1"?><br />
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><br />
-<html xmlns="http://www.w3.org/1999/xhtml"><br />
-<head><br />
-<title>ComputeFidyah 5.0 &#8211; Web-Based Fidyah Calculator</title><br />
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><br />
-<script language="JavaScript" type="text/javascript" src="https://hazrulazhar.github.io/computefidyah/computefidyah.js"></script></p>
-<style type="text/css">
-body {
-	font-family: "Trebuchet MS";
-	font-size: x-small;
-	font-style: normal;
-	font-weight: normal;
-	color: #000000;
-}
-td {
-	font-family: "Trebuchet MS";
-	font-size: x-small;
-	font-style: normal;
-	font-weight: normal;
-	color: #000000;
-	background-color: #FFFFCC;
-	border: 1px solid #000000;
-}
-.untd {
-	font-family: "Trebuchet MS";
-	font-size: x-small;
-	font-style: normal;
-	font-weight: normal;
-	color: #000000;
-	background-color: #FFFFCC;
-	border: 1px none #000000;</p>
-<p>}
-a:link {
-	font-size: x-small;
-	color: #0099FF;
-	text-decoration: none;
-}
-a:active {
-	font-size: x-small;
-	color: #0099FF;
-	text-decoration: none;
-}
-a:visited {
-	font-size: x-small;
-	color: #0099FF;
-	text-decoration: none;
-}
-a:hover {
-	font-size: x-small;
-	color: #0099FF;
-	text-decoration: overline;
-}
-input {
-	font-family: "Trebuchet MS";
-	font-size: x-small;
-	font-style: normal;
-	font-weight: bold;
-	color: #0000FF;
-	background-color: #FFFFFF;
-	border: 1px solid;
-}
-.codesyntax {
-	font-family: monospace;
-	font-size: 11px;
-	color: #CC3300;</p>
-<p>}
-.scrollsyntax {
-	overflow: scroll;
-	visibility: visible;
-	height: 200px;
-	width: 700px;
-}
-</style>
-<p></head></p>
-<p><body></p>
-<p><strong>ComputeFidyah 5.0 [Open Source product of <a href="https://www.hazrulazhar.com">Hazrul Azhar Jamari</a>]</strong></p>
-<form name="frmFid" id="frmFid" action="" onsubmit="computeFidyah(); return false;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ComputeFidyah 5.0 &#8211; Fidyah Calculator App</title>
+<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script defer src="computefidyah.js"></script>
+<script defer src="site.js"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<link rel="manifest" href="manifest.json" />
+</head>
+<body>
+<p><strong>ComputeFidyah 5.0</strong></p>
+<form name="frmFid" id="frmFid" action="" onchange="computeFidyah();" onsubmit="computeFidyah(); return false;">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="32%">Total Number of Years</td>
-<td width="68%"><input name="totalnumofyears" type="text" id="totalnumofyears" size="2" onchange="javascript: changeYears();" /><br />
-        <strong>&lt;</strong> Enter number of years when you didn&#8217;t fast and did<br />
-        not make up for it.</td>
+<td>Total Number of Years</td>
+<td><input name="totalnumofyears" type="text" id="totalnumofyears" size="2" onchange="javascript: changeYears();" /> <strong>&lt;</strong> Enter number of years when you didn&#8217;t fast and did not make up for it.</td>
 </tr>
 <tr>
 <td>Number of Days per Ramadhan</td>
-<td><input name="numofdaysperramadan" type="text" id="numofdaysperramadan" size="2" /><br />
-        <strong>&lt;</strong> Enter number of days during each Ramadhan which<br />
-        you didn&#8217;t fast.</td>
+<td><input name="numofdaysperramadan" type="text" id="numofdaysperramadan" size="2" /> <strong>&lt;</strong> Enter number of days during each Ramadhan which you didn&#8217;t fast.</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td colspan="2">You had not fasted <strong><span class="totalnumoframadandays" id="totalnumoframadandays">?</span></strong><br />
-        days in <strong><span class="totalnumofyears2" id="totalnumofyears2">?</span></strong><br />
-        years </td>
+<td colspan="2">You had not fasted <strong><span class="totalnumoframadandays" id="totalnumoframadandays">?</span></strong> days in <strong><span class="totalnumofyears2" id="totalnumofyears2">?</span></strong> years </td>
 </tr>
 <tr>
 <td height="22">Additional Days</td>
-<td><input name="adddays" type="text" id="adddays" size="4" /><br />
-        <strong>&lt;</strong> Enter additional days which you did not fast if<br />
-        any.</td>
+<td><input name="adddays" type="text" id="adddays" size="4" /> <strong>&lt;</strong> Enter additional days which you did not fast if any.</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td colspan="2">You are liable to pay Fidyah for <strong><span class="totalfidyahdays" id="totalfidyahdays">?</span></strong><br />
-        days</td>
+<td colspan="2">You are liable to pay Fidyah for <strong><span class="totalfidyahdays" id="totalfidyahdays">?</span></strong> days</td>
 </tr>
 <tr>
 <td>Price of rice per kati</td>
@@ -126,169 +53,8 @@ input {
 </tr>
 </table>
 </form>
-<p><strong>Table of Contents</strong></p>
-<ol>
-<li><a href="#about" title="More aboute the ComputeFidyah project">About the<br />
-    ComputeFidyah Project</a></li>
-<li><a href="#why" title="The reasons behind open sourcing ComputeFidyah">Why<br />
-    did we Open Source ComputeFidyah?</a></li>
-<li><a href="#how" title="Instructions to add the calculator to your website">How<br />
-    do I add the Fidyah Calculator to my website?</a></li>
-<li><a href="#mods" title="Instructions to modify the coding">How do I perform<br />
-    modifications to the coding?</a></li>
-<li><a href="#known" title="Issues pertaining to national adoption of the calculator and its accuracy">Known<br />
-    Issues</a></li>
-<li><a href="#tech" title="Issues pertaining to compatibility">Technological<br />
-    Issues</a></li>
-<li><a href="#support" title="Technical support issues with Hazrul and my various licences and custom products">Technical<br />
-    Support</a></li>
-</ol>
-<p>&nbsp;</p>
-<p><strong>About the ComputeFidyah Project<a name="about" id="about"></a></strong></p>
-<p>ComputeFidyah started as a requirement from our client, <a href="http://www.mosque.org.sg/ghufran">Darul<br />
-  Ghufran Mosque</a>, to include a Fidyah Calculator to their website. Muis already<br />
-  had a Fidyah Calculator placed on the web, but this wasn&#8217;t optimised for web<br />
-  usage as it was an MS Excel file, embedded into the website. This required users<br />
-  to have the Microsoft Office Web Works Component in their computer and restricted<br />
-  viewing to only Microsoft Operating Systems.</p>
-<p>A case study was done, and instead of hyperlinking the Muis calculator, or<br />
-  even copying the HTML markup from the Muis website since we already had permission,<br />
-  we reversed engineered the whole program into a XHTML/Javascript version which<br />
-  was Cross-Browser, Cross-Platform and most importantly, Cross-Medium.</p>
-<p>The ComputeFidyah calculator, became the world&#8217;s first Fidyah Calculator optimised<br />
-  for both the wired and wireless web. The software can be rendered properly on<br />
-  <strong>ALL</strong> browsers and platform, including mobile phones and PDAs<br />
-  that support Javascript 1.2.</p>
-<p><a href="#">&#94; Go to Top</a></p>
-<p>&nbsp;</p>
-<p><strong>Why did we Open Source ComputeFidyah?<a name="why" id="why"></a></strong></p>
-<p>We released ComputeFidyah as an open source software so that other developers<br />
-  can modify the code and improve on it freely. Going Open Source also meant that<br />
-  other developers can make use of the code and put it as part of their own program<br />
-  and sell it for a small profit. Open Source ensured freedom for developers and<br />
-  consumers. You may view the GNU GPL License that protects this software <a href="http://www.opensource.org/licenses/gpl-license.php">here</a>.</p>
-<p><a href="#">&#94; Go to Top</a></p>
-<p>&nbsp;</p>
-<p><strong>How do I add the Fidyah Calculator to my website?<a name="how" id="how"></a></strong></p>
-<p>Because it is completely Javascript, you can syndicate the whole program to<br />
-  your website.</p>
-<p>To syndicate, copy and paste this code into the &lt;head&gt;&#8230;&lt;/head&gt;<br />
-  of your web page.</p>
-<p class="codesyntax">&lt;script language=&quot;JavaScript&quot; type=&quot;text/javascript&quot;<br />
-  src=&quot;https://hazrulazhar.github.io/computefidyah/computefidyah.js&quot;&gt;&lt;/script&gt;
-</p>
-<p>Then copy and paste this XHTML code into the &lt;body&gt;&#8230;&lt;/body&gt; of<br />
-  your web page.</p>
-<div class="scrollsyntax">
-<p class="codesyntax">&lt;p&gt;&lt;strong&gt;ComputeFidyah 5.0&lt;/strong&gt;&lt;/p&gt;<br />
-    &lt;form name=&quot;frmFid&quot; id=&quot;frmFid&quot; action=&quot;&quot;<br />
-    onsubmit=&quot;computeFidyah(); return false;&quot;&gt;<br />
-    &lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot;<br />
-    cellpadding=&quot;0&quot;&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td width=&quot;32%&quot;&gt;Total Number of Years&lt;/td&gt;<br />
-    &lt;td width=&quot;68%&quot;&gt;&lt;input name=&quot;totalnumofyears&quot;<br />
-    type=&quot;text&quot; id=&quot;totalnumofyears&quot; size=&quot;2&quot; onchange=&quot;javascript:<br />
-    changeYears();&quot; /&gt;<br />
-    &lt;strong&gt;&amp;lt;&lt;/strong&gt; Enter number of years when you didn&#8217;t<br />
-    fast and did <br />
-    not make up for it.&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td&gt;Number of Days per Ramadhan&lt;/td&gt;<br />
-    &lt;td&gt;&lt;input name=&quot;numofdaysperramadan&quot; type=&quot;text&quot;<br />
-    id=&quot;numofdaysperramadan&quot; size=&quot;2&quot; /&gt;<br />
-    &lt;strong&gt;&amp;lt;&lt;/strong&gt; Enter number of days during each Ramadhan<br />
-    which <br />
-    you didn&#8217;t fast.&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br />
-    &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td colspan=&quot;2&quot;&gt;You had not fasted &lt;strong&gt;&lt;span<br />
-    class=&quot;totalnumoframadandays&quot; id=&quot;totalnumoframadandays&quot;&gt;?&lt;/span&gt;&lt;/strong&gt;<br />
-    <br />
-    days in &lt;strong&gt;&lt;span class=&quot;totalnumofyears2&quot; id=&quot;totalnumofyears2&quot;&gt;?&lt;/span&gt;&lt;/strong&gt;<br />
-    years &lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td height=&quot;22&quot;&gt;Additional Days&lt;/td&gt;<br />
-    &lt;td&gt;&lt;input name=&quot;adddays&quot; type=&quot;text&quot; id=&quot;adddays&quot;<br />
-    size=&quot;4&quot; /&gt;<br />
-    &lt;strong&gt;&amp;lt;&lt;/strong&gt; Enter additional days which you did<br />
-    not fast if <br />
-    any.&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br />
-    &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td colspan=&quot;2&quot;&gt;You are liable to pay Fidyah for &lt;strong&gt;&lt;span<br />
-    class=&quot;totalfidyahdays&quot; id=&quot;totalfidyahdays&quot;&gt;?&lt;/span&gt;&lt;/strong&gt;<br />
-    <br />
-    days&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td&gt;Price of rice per kati&lt;/td&gt;<br />
-    &lt;td&gt;$&lt;span class=&quot;priceofriceperkati1&quot; id=&quot;priceofriceperkati1&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td colspan=&quot;2&quot;&gt;You must pay &lt;strong&gt;$&lt;span class=&quot;totalfidyahpayable&quot;<br />
-    id=&quot;totalfidyahpayable&quot;&gt;?&lt;/span&gt;&lt;/strong&gt;.&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;tr&gt; <br />
-    &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br />
-    &lt;td&gt;&lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;Compute&quot;<br />
-    /&gt;&lt;/td&gt;<br />
-    &lt;/tr&gt;<br />
-    &lt;/table&gt;<br />
-    &lt;/form&gt;<br />
-    &lt;p&gt;Copyright &amp;copy; 2004 &lt;a href=&quot;http://www.hazrulazhar.com&quot;&gt;Hazrul Azhar Jamari<br />
-    Solutions&lt;/a&gt;. <br />
-    This software is protected by the &lt;a href=&quot;http://www.opensource.org/licenses/gpl-license.php&quot;&gt;GNU<br />
-    <br />
-    General Public License&lt;/a&gt;.&lt;/p&gt;</p>
-</div>
-<p>Please ensure you link back to us and preserve the copyright of the original<br />
-  coding.</p>
-<p><a href="#">&#94; Go to Top</a></p>
-<p>&nbsp;</p>
-<p><strong>How do I perform modifications to the coding?<a name="mods" id="mods"></a></strong></p>
-<p>To preserve the accuracy of the calculations, you can design your web form<br />
-  to your liking as long as you maintain the &quot;id&quot; and &quot;name&quot;<br />
-  attributes of the &lt;form&gt;&#8230;&lt;/form&gt;, &lt;span&gt;&#8230;&lt;/span&gt;<br />
-  and &lt;input &#8230; /&gt; tags.</p>
-<p><a href="#">&#94; Go to Top</a></p>
-<p>&nbsp;</p>
-<p><strong>Known Issues<a name="known" id="known"></a></strong></p>
-<p>Please note that you are referencing your website to this personal Github page. It<br />
-  is not a religious body that dictates the prices of rice per kati for such<br />
-  calculations. We are trying to convince <a href="http://www.muis.gov.sg">Muis</a><br />
-  to adopt the Fidyah Calculator into their website so that the public can be<br />
-  more confident of its calculations as the price of rice per kati fluctuates<br />
-  from time to time. For the moment, I will update this price on the program<br />
-  ourselves as and when we receive information on the price changes.</p>
-<p>UPDATE: It seems MUIS have updated their fidyah calculator this year in 2018 after over a decade of convincing them. They didn't use my code, but I'm just glad it's finally in JavaScript.</p>
-<p><a href="#">&#94; Go to Top</a></p>
-<p>&nbsp;</p>
-<p><strong>Technological Issues<a name="tech" id="tech"></a></strong></p>
-<p>ComputeFidyah works on all modern standards-compliant browsers.</p>
-<p><a href="#">&#94; Go to Top</a></p>
-<p>&nbsp;</p>
-<p><strong>Technical Support<a name="support" id="support"></a></strong></p>
-<p>ComputeFidyah is donorware and is Open Source. Because of its free nature,<br />
-  we do not provide free technical support. If you are using this generic, syndicated<br />
-  version of ComputeFidyah, and you wish to require technical assistance, technical<br />
-  support can be requested at the current consultation rate of S$50/hour.</p>
-<p><a href="#">&#94; Go to Top</a></p>
-</div>
-<p>Copyright &copy; 2004 &#8211; 2018 <a href="https://www.hazrulazhar.com">Hazrul Azhar Jamari</a>.<br />
-  This software is protected by the <a href="http://www.opensource.org/licenses/gpl-license.php">GNU<br />
-  General Public License</a>. This application is fully <a href="http://validator.w3.org:8001/check?uri=referer">xHTML</a><br />
-  and <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.0</a> valid<br />
-  and 100% compliant to <a href="http://www.w3.org/">W3C</a> standards.</p>
+
+<p>Copyright &copy; 2004 &#8211; 2018 <a href="https://www.hazrulazhar.com">Hazrul Azhar Jamari</a>.</p>
+<p>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
 </body>
 </html>

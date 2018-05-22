@@ -1,0 +1,40 @@
+body {
+	font-family: "Helvetica";
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+}
+td {
+	font-family: "Helvetica";
+	color: #000000;
+	border: 1px solid #000000;
+  padding: 10px;
+}
+.untd {
+	font-family: "Helvetica";
+	color: #000000;
+	background-color: #FFFFCC;
+	border: 1px none #000000;
+}
+a:link {
+	color: #0099FF;
+	text-decoration: none;
+}
+a:active {
+	color: #0099FF;
+	text-decoration: none;
+}
+a:visited {
+	color: #0099FF;
+	text-decoration: none;
+}
+a:hover {
+	color: #0099FF;
+	text-decoration: underline;
+}
+input {
+	color: #0000FF;
+	background-color: #FFFFFF;
+	border: 1px solid;
+}
