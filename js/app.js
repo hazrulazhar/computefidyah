@@ -12,7 +12,7 @@ var app = new Framework7({
   // App root element
  root: '#app',
  // App Name
- name: 'My App',
+ name: 'Fidyah',
  // App id
  id: 'com.computefidyah.hazxco',
  // Enable swipe panel
@@ -29,8 +29,7 @@ var app = new Framework7({
      path: '/fidyah/',
      url: 'pages/fidyah.html',
    }
- ],
- // ... other parameters
+ ]
 });
 
 var mainView = app.views.create('.view-main');

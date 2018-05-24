@@ -24,36 +24,37 @@
 <body>
   <!-- App root element -->
     <div id="app">
-      <!-- Statusbar overlay -->
-      <div class="statusbar"></div>
-      <div class="panel panel-left panel-cover">
-        <div class="page">
-          <div class="page-content">
-            <div class="block-title" style="text-align: center;">ComputeFidyah</div>
-            <div class="block">
-              <p style="text-align: center;"><img src="apple-touch-icon-iphone-60x60.png" class="center" /></p>
-            </div>
-            <div class="list links-list">
-              <ul>
-                <li>
-                  <a href="/fidyah/" class="panel-close">Hukum Fidyah</a>
-                </li>
-                <li>
-                  <a href="/about/" class="panel-close">About This App</a>
-                </li>
-                <li>
-                  <a href="https://github.com/hazrulazhar/computefidyah" class="link external panel-close">Source Code</a>
-                </li>
-              </ul>
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main view-init ios-edges" data-url="/">
+
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+        <div class="panel panel-left panel-cover">
+          <div class="page">
+            <div class="page-content">
+              <div class="block-title" style="text-align: center;">ComputeFidyah</div>
+              <div class="block">
+                <p style="text-align: center;"><img src="apple-touch-icon-iphone-60x60.png" class="center" /></p>
+              </div>
+              <div class="list links-list">
+                <ul>
+                  <li>
+                    <a href="/fidyah/" class="panel-close">Hukum Fidyah</a>
+                  </li>
+                  <li>
+                    <a href="/about/" class="panel-close">About This App</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hazrulazhar/computefidyah" class="link external panel-close">Source Code</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Your main view, should have "view-main" class -->
-      <div class="view view-main view-init ios-edges" data-url="/">
         <!-- Initial Page, "data-name" contains page name -->
-        <div class="page">
+        <div class="home page">
 
           <!-- Top Navbar -->
           <div class="navbar">
