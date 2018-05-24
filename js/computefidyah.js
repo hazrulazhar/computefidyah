@@ -6,15 +6,8 @@ var ns6=document.getElementById&&!document.all
 var priceofriceperkati="1.30";
 
 function writeKati() {
-	if (ns4) {
-	ns4.priceofriceperkati.document.write(priceofriceperkati);
-	ns4.priceofriceperkati.document.close();
-	}
-	else if (ie4) {
-	ie4.priceofriceperkati1.innerHTML = priceofriceperkati;
-	}
-	else if (ns6) {
-	document.getElementById("priceofriceperkati1").innerHTML = priceofriceperkati;
+	if(document.getElementById("priceofriceperkati1")) {
+		document.getElementById("priceofriceperkati1").innerHTML = priceofriceperkati;
 	}
 }
 

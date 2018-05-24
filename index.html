@@ -2,59 +2,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ComputeFidyah 5.0 &#8211; Fidyah Calculator App</title>
-<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<script defer src="computefidyah.js"></script>
-<script defer src="site.js"></script>
-<meta name="viewport" content="width=device-width, user-scalable=no" />
-<link rel="manifest" href="manifest.json" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <title>ComputeFidyah 5.0 &#8211; Fidyah Calculator App</title>
+  <link rel="stylesheet" href="dist/css/framework7.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!--link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" /-->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="touch-icon-iphone-60x60.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="touch-icon-ipad-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone-retina-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="touch-icon-ipad-retina-152x152.png">
+  <link rel="icon" sizes="114x114" href="touch-icon-iphone-retina-120x120.png">
+  <script defer src="js/computefidyah.js"></script>
+  <script defer src="site.js"></script>
 </head>
 <body>
-<p><strong>ComputeFidyah 5.0</strong></p>
-<form name="frmFid" id="frmFid" action="" onchange="computeFidyah();" onsubmit="computeFidyah(); return false;">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td>Total Number of Years</td>
-<td><input name="totalnumofyears" type="text" id="totalnumofyears" size="2" onchange="javascript: changeYears();" /> <strong>&lt;</strong> Enter number of years when you didn&#8217;t fast and did not make up for it.</td>
-</tr>
-<tr>
-<td>Number of Days per Ramadhan</td>
-<td><input name="numofdaysperramadan" type="text" id="numofdaysperramadan" size="2" /> <strong>&lt;</strong> Enter number of days during each Ramadhan which you didn&#8217;t fast.</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td colspan="2">You had not fasted <strong><span class="totalnumoframadandays" id="totalnumoframadandays">?</span></strong> days in <strong><span class="totalnumofyears2" id="totalnumofyears2">?</span></strong> years </td>
-</tr>
-<tr>
-<td height="22">Additional Days</td>
-<td><input name="adddays" type="text" id="adddays" size="4" /> <strong>&lt;</strong> Enter additional days which you did not fast if any.</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td colspan="2">You are liable to pay Fidyah for <strong><span class="totalfidyahdays" id="totalfidyahdays">?</span></strong> days</td>
-</tr>
-<tr>
-<td>Price of rice per kati</td>
-<td>$<span class="priceofriceperkati1" id="priceofriceperkati1">&nbsp;</span></td>
-</tr>
-<tr>
-<td colspan="2">You must pay <strong>$<span class="totalfidyahpayable" id="totalfidyahpayable">?</span></strong>.</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Compute" /></td>
-</tr>
-</table>
-</form>
+  <!-- App root element -->
+    <div id="app">
+      <!-- Statusbar overlay -->
+      <div class="statusbar"></div>
+      <div class="panel panel-left panel-cover">
+        <div class="page">
+          <div class="page-content">
+            <div class="block-title" style="text-align: center;">ComputeFidyah</div>
+            <div class="block">
+              <p style="text-align: center;"><img src="apple-touch-icon-iphone-60x60.png" class="center" /></p>
+            </div>
+            <div class="list links-list">
+              <ul>
+                <li>
+                  <a href="/fidyah/" class="panel-close">Hukum Fidyah</a>
+                </li>
+                <li>
+                  <a href="/about/" class="panel-close">About This App</a>
+                </li>
+                <li>
+                  <a href="https://github.com/hazrulazhar/computefidyah" class="link external panel-close">Source Code</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<p>Copyright &copy; 2004 &#8211; 2018 <a href="https://www.hazrulazhar.com">Hazrul Azhar Jamari</a>.</p>
-<p>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main view-init ios-edges" data-url="/">
+        <!-- Initial Page, "data-name" contains page name -->
+        <div class="page">
+
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only panel-open" data-panel="left">
+                  <i class="icon f7-icons ios-only">menu</i>
+                  <i class="icon material-icons md-only">menu</i>
+                </a>
+              </div>
+              <div class="title sliding">ComputeFidyah 5.0</div>
+            </div>
+          </div>
+          <div class="page">
+            <div class="page-content">
+              <div class="block-title">Compute Fidyah 5.0</div>
+                <form name="frmFid" class="list form-store-data" id="frmFid" action="" onchange="computeFidyah();" onsubmit="computeFidyah(); return false;">
+                  <ul>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Number of years didn't fast and did not qadha'</div>
+                        <div class="item-input-wrap">
+                          <input placeholder="2" name="totalnumofyears" type="text" id="totalnumofyears" onchange="javascript: changeYears();" />
+                          <span class="input-clear-button"></span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                      <div class="item-title item-label">Number of days you did not fast per Ramadan</div>
+                        <div class="item-input-wrap">
+                          <input placeholder="5" name="numofdaysperramadan" type="text" id="numofdaysperramadan" />
+                          <span class="input-clear-button"></span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                          <div class="item-title item-label">Additional Days</div>
+                          <div class="item-input-wrap">
+                            <input placeholder="0" name="adddays" type="text" id="adddays" />
+                            <span class="input-clear-button"></span>
+                          </div>
+                      </div>
+                    </li>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-input-wrap">
+                          Your penalty is for <span class="totalnumoframadandays" id="totalnumoframadandays"><strong>?</strong></span> days in <span class="totalnumofyears2" id="totalnumofyears2"><strong>?</strong></span> years.
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-input-wrap">
+                          You are liable to pay Fidyah for <strong><span class="totalfidyahdays" id="totalfidyahdays">?</span></strong> days.
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Price of rice per kati</div>
+                        <div class="item-input-wrap">$<span class="priceofriceperkati1" id="priceofriceperkati1">&nbsp;</span></div>
+                      </div>
+                    </li>
+                    <li class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-input-wrap">You must pay <strong>$<span class="totalfidyahpayable" id="totalfidyahpayable">?</span></strong>.</div>
+                      </div>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+          </div>
+    </div>
+  </div>
+    <!-- Path to Framework7 Library JS-->
+<script src="dist/js/framework7.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
