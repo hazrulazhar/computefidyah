@@ -3,7 +3,7 @@ var ie4=document.all
 var ns4=document.layers
 var ns6=document.getElementById&&!document.all
 
-var priceofriceperkati="1.30";
+var priceofriceperkati="1.40";
 
 function writeKati() {
 	if(document.getElementById("priceofriceperkati1")) {
